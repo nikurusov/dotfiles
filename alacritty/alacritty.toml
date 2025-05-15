@@ -1,0 +1,65 @@
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[env]
+TERM = "xterm-256color"
+
+
+[colors.normal]
+black = "#272a34"
+blue = "#51a2da"
+cyan = "#55ddff"
+green = "#aaffaa"
+magenta = "#ff80e5"
+red = "#ff0066"
+white = "#f2f2f2"
+yellow = "#ffc762"
+
+[colors.primary]
+background = "#272a34"
+foreground = "#f9f9f9"
+
+[font]
+size = 18.0
+
+# [font.bold]
+# family = "JetBrains Mono"
+# style = "Bold"
+#
+# [font.normal]
+# family = "JetBrains Mono"
+# style = "Bold"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[scrolling]
+history = 10000
+
+[window]
+opacity = 0.95
+
+[window.padding]
+x = 15
+y = 15
+
+[debug]
+log_level = "Error"
+persistent_logging = false
+
+[terminal.shell]
+program = "/opt/homebrew/bin/fish"
+args = ["--login"]
+
+# [keyboard]
+# bindings = [
+#     { key="ArrowUp", mods="Control|Shift", action="ScrollLineUp" },
+#     { key="ArrowDown", mods="Control|Shift", action="ScrollLineDown" }
+# ]
+
