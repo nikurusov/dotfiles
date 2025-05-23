@@ -61,6 +61,9 @@ vim.opt.scrolloff = 10
 -- Some plugins require this set to true
 vim.opt.termguicolors = true
 
+-- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
