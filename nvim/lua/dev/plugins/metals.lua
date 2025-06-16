@@ -21,5 +21,12 @@ return {
       end,
       group = nvim_metals_group,
     })
+
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = self.ft,
+      callback = function()
+        vim.keymap.set('n', '<leader>cn', ':MetalsNewScalaFile<CR>', { silent = true, noremap = true })
+      end,
+    })
   end,
 }

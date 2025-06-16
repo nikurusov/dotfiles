@@ -5,10 +5,9 @@ end
 alias n="nvim"
 
 # set -x JAVA_HOME /Users/n.urusov/Library/Java/JavaVirtualMachines/zulu-17
-set -x JAVA_HOME /Users/n.urusov/Library/Java/JavaVirtualMachines/graalvm-jdk-23.0.2+7.1/Contents/Home
-
-#
 # set -x JAVA_HOME /Users/n.urusov/Library/Java/JavaVirtualMachines/graalvm-jdk-23.0.2+7.1/Contents/Home
+set -x JAVA_HOME /Users/n.urusov/Library/Java/JavaVirtualMachines/corretto-21.0.5/Contents/Home
+#
 # set -x JAVA_HOME /Users/n.urusov/Library/Java/JavaVirtualMachines/graalvm-ce-17.0.9/Contents/Home
 set -x PATH $JAVA_HOME/bin $PATH
 set -x EDITOR "nvim"

@@ -127,3 +127,33 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.bo.expandtab = false
   end,
 })
+
+local workspaces = {
+  notes = '~/Documents/life',
+  projects = '~/Developer/projects',
+  neovim = '~/.config/nvim',
+}
+
+local function focus_workspace(name)
+  local path = workspaces[name]
+  if not path then
+    print('Workspace not found: ' .. name)
+    return
+  end
+  vim.cmd('cd' .. path)
+  vim.cmd 'Neotree'
+end
+
+vim.keymap.set('n', '<leader>wn', function()
+  focus_workspace 'notes'
+end, { noremap = true, silent = true, desc = '[W]orkspace: [N]otes' })
+
+vim.keymap.set('n', '<leader>wp', function()
+  focus_workspace 'projects'
+end, { noremap = true, silent = true, desc = '[W]orkspace: [P]rojects' })
+
+vim.keymap.set('n', '<leader>wv', function()
+  focus_workspace 'neovim'
+end, { noremap = true, silent = true, desc = '[W]orkspace: [N]eovim config' })
+
+vim.keymap.set('n', '<leader>nr', ':Neotree reveal<CR>', { noremap = true, silent = true, desc = '[N]eotree: [R]eveal' })

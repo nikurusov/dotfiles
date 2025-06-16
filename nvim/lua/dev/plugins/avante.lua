@@ -8,12 +8,18 @@ return {
       openrouter = {
         __inherited_from = 'openai',
         endpoint = 'https://openrouter.ai/api/v1',
-        model = 'google/gemini-2.5-flash-preview',
+        -- model = 'google/gemini-2.5-flash-preview-05-20:thinking',
+        -- model = 'google/gemini-2.5-flash-preview',
+        model = 'anthropic/claude-3.7-sonnet',
         api_key_name = 'OPENROUTER_API_KEY',
         timeout = 30000,
         temperature = 0,
-        max_completion_tokens = 8192,
+        max_tokens = 8192,
       },
+    },
+    web_search_engine = {
+      provider = 'tavily', -- tavily, serpapi, searchapi, google, kagi, brave, or searxng
+      proxy = nil, -- proxy support, e.g., http://127.0.0.1:7890
     },
     -- system_prompt as function ensures LLM always has latest MCP server state
     -- This is evaluated for every message, even in existing chats
@@ -27,6 +33,32 @@ return {
         require('mcphub.extensions.avante').mcp_tool(),
       }
     end,
+    windows = {
+      ---@type "right" | "left" | "top" | "bottom"
+      position = 'top', -- the position of the sidebar
+      wrap = true, -- similar to vim.o.wrap
+      width = 20, -- default % based on available width
+      sidebar_header = {
+        enabled = false, -- true, false to enable/disable the header
+        align = 'right', -- left, center, right for title
+        rounded = true,
+      },
+      input = {
+        prefix = '> ',
+        height = 8, -- Height of the input window in vertical layout
+      },
+      edit = {
+        border = 'rounded',
+        start_insert = true, -- Start insert mode when opening the edit window
+      },
+      ask = {
+        floating = false, -- Open the 'AvanteAsk' prompt in a floating window
+        start_insert = true, -- Start insert mode when opening the ask window
+        border = 'rounded',
+        ---@type "ours" | "theirs"
+        focus_on_apply = 'ours', -- which diff to focus after applying
+      },
+    },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = 'make BUILD_FROM_SOURCE=true',
