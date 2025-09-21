@@ -1,5 +1,5 @@
--- LSP Server for Scala
-
+-- -- LSP Server for Scala
+--
 return {
   'scalameta/nvim-metals',
   dependencies = {

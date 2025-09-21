@@ -128,6 +128,15 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '*.go' },
+  callback = function()
+    vim.bo.tabstop = 2
+    vim.bo.shiftwidth = 2
+    vim.bo.expandtab = false
+  end,
+})
+
 local workspaces = {
   notes = '~/Documents/life',
   projects = '~/Developer/projects',
